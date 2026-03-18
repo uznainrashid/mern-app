@@ -5,7 +5,6 @@ const {
 } = require("../Middleware/AuthValidation");
 
 const router = require("express").Router(); 
-
 router.post("/signup", SignUpValidation, SignUp);
 router.post("/login", LoginValidation, Login);
 
