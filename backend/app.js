@@ -9,15 +9,15 @@ const ProductRouters = require("./routes/ProductRouter");
 
 const PORT = process.env.PORT || 8080;
 
-app.use(cors());
+app.use(cors()); 
 app.use(bodyParser.json());
 
 app.use("/auth", AuthRouter);
-app.use("/pong", (req, res) => {
+app.use("/", (req, res) => {
   res.send("Complete");
 });
 app.use("/products", ProductRouters);
 
-app.listen(PORT, () => {
-  console.log(`server are running this Port ${PORT}`);
+app.listen(PORT, () => { 
+  console.log(`server are running this Port ${PORT}`); 
 });
