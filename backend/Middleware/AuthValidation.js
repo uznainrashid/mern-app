@@ -22,7 +22,7 @@ const LoginValidation = (req, res, next) => {
   });
   const { error } = schema.validate(req.body);
   if (error) {
-    res.status(400).json({
+   return res.status(400).json({
       message: "Bad request",
       error,
     });
