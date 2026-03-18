@@ -15,8 +15,8 @@ app.use(cors({
 app.use(bodyParser.json());
 
 app.use("/auth", AuthRouter);
-
 app.use("/products", ProductRouters);
+
 app.get("/", (req, res) => {
   res.send("Complete"); 
 });
