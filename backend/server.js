@@ -13,11 +13,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/auth", AuthRouter);
-app.get("/", (req, res) => {
-  res.send("Complete");
-});
-app.use("/products", ProductRouters);
 
+app.use("/products", ProductRouters);
+app.get("/", (req, res) => {
+  res.send("Complete"); 
+});
 app.listen(PORT, () => { 
-  console.log(`server are running this Port ${PORT}`); 
+  console.log(`server are running this Port ${PORT}`);  
 });
