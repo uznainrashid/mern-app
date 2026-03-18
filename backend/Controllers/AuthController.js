@@ -64,7 +64,7 @@ const Login = async (req, res) => {
     });
   } catch (error) {
    return res.status(500).json({
-      message: "Internal server error email already exists",
+      message: "Internal server error",
       success: false,
     });
   }
