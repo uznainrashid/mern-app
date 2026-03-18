@@ -55,7 +55,7 @@ const Login = async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: "24h" }
     );
-    res.status(200).json({
+    return res.status(200).json({
       message: "Login successfully",
       success: true,
       email,
@@ -63,7 +63,7 @@ const Login = async (req, res) => {
       name: users.name,
     });
   } catch (error) {
-    res.status(500).json({
+   return res.status(500).json({
       message: "Internal server error",
       success: false,
     });
