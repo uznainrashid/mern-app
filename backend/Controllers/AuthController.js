@@ -9,7 +9,7 @@ const SignUp = async (req, res) => {
     const users = await userModel.findOne({ email });
     // agr email already h  already h to sirf singup hoga
     if (users) {
-      return res.Status(409).json({
+      return res.status(409).json({
         message: "User is already exists, you can login",
         success: false ,
       }); 
