@@ -19,8 +19,11 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Install dependencies
+    - name: Install Backend Dependencies
+      # Agar aapka folder name 'backend' hai toh ye chalega
       run: npm install
+      working-directory: ./backend 
 
     - name: Build Project
       run: npm run build --if-present
+      working-directory: ./backend
