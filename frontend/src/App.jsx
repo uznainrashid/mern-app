@@ -7,6 +7,15 @@ import RefreshHandler from "./pages/RefreshHandler";
 
 function App() {
   const [IsAuthenicated, setIsAuthenicated] = useState(false);
+  function greet() {
+    console.log("Hello");
+  }
+  function processInput(callback) {
+    console.log("Processing input...");
+    callback();
+
+  }
+  processInput(greet);
 
   const PrivateRouting = ({ element }) => {
     return IsAuthenicated ? element : <Navigate to="/login" />;

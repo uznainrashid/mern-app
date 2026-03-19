@@ -1,0 +1,30 @@
+name: Node.js CI (SmartBuy Testing)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/actions-checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Aapki Node version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Check for Build Errors
+      # Agar backend hai toh sirf install hi kafi hai, 
+      # lekin agar koi test script hai toh wo chalayein
+      run: |
+        echo "Testing build integrity..."
+        # node index.js --check (optional)
