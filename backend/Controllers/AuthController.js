@@ -10,7 +10,7 @@ const SignUp = async (req, res) => {
     // agr email already h  already h to sirf singup hoga
     if (users) {
       return res.status(409).json({
-        message: "User is already exists, you can login",
+        message: "email is already exists, you can login",
         success: false ,
       }); 
     }
