@@ -12,19 +12,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/actions-checkout@v4
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' # Aapki Node version
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
 
-    - name: Check for Build Errors
-      # Agar backend hai toh sirf install hi kafi hai, 
-      # lekin agar koi test script hai toh wo chalayein
-      run: |
-        echo "Testing build integrity..."
-        # node index.js --check (optional)
+    - name: Build Project
+      run: npm run build --if-present
